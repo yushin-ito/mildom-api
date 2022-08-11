@@ -1,19 +1,32 @@
 {
   "name": "mildom",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple Wrapper Module for making API calls to mildom",
   "main": "index.js",
   "type": "module",
   "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Yushin Ito",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yushin-ito/mildom.git"
+  },
+  "homepage": "https://github.com/yushin-ito/mildom",
+  "bugs": {
+    "url": "https://github.com/yushin-ito/mildom/issues"
+  },
+  "keywords": [
+    "mildom",
+    "live",
+    "stream"
+  ],
   "dependencies": {
     "https": "^1.0.0",
     "uuid": "^8.3.2",
     "ws": "^8.8.1",
     "xxtea-node": "^1.1.4"
   }
-}
+} 
