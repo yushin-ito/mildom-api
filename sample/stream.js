@@ -1,7 +1,6 @@
-import ChatListener from "../src/stream/listener.js";
+import { ChatListener } from "mildom-api";
 
 const onChat = async (chat) => {
-  console.log(chat.userName);
   console.log(chat.msg);
 };
 
