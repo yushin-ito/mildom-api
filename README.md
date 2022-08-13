@@ -1,6 +1,12 @@
 # mildom-api
 
-[![npm version](https://flat.badgen.net/npm/v/mildom)](https://www.npmjs.com/package/mildom)
+[![npm version](https://flat.badgen.net/npm/v/mildom-api)](https://www.npmjs.com/package/mildom-api)
+![workflow](https://github.com/yushin-ito/mildom-api/actions/workflows/node.js.yml/badge.svg)
+![Coverage:lines](coverage/badge-lines.svg)
+![Coverage:functions](coverage/badge-functions.svg)
+![Coverage:branches](coverage/badge-branches.svg)
+![Coverage:statements](coverage/badge-statements.svg)
+![Licence](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=43200)
 
 Simple Wrapper Module for making API calls to https://fortniteapi.io.
 
