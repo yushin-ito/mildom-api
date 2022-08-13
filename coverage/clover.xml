@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660369806184" clover="3.2.0">
-  <project timestamp="1660369806185" name="All files">
-    <metrics statements="134" coveredstatements="113" conditionals="50" coveredconditionals="29" methods="40" coveredmethods="35" elements="224" coveredelements="177" complexity="0" loc="134" ncloc="134" packages="4" files="5" classes="5"/>
-    <package name="lib">
+<coverage generated="1660374937756" clover="3.2.0">
+  <project timestamp="1660374937756" name="All files">
+    <metrics statements="132" coveredstatements="113" conditionals="50" coveredconditionals="29" methods="40" coveredmethods="35" elements="222" coveredelements="177" complexity="0" loc="132" ncloc="132" packages="4" files="5" classes="5"/>
+    <package name="src">
       <metrics statements="50" coveredstatements="46" conditionals="29" coveredconditionals="19" methods="18" coveredmethods="15"/>
-      <file name="mildom.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\lib\mildom.js">
+      <file name="mildom-api.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\src\mildom-api.js">
         <metrics statements="50" coveredstatements="46" conditionals="29" coveredconditionals="19" methods="18" coveredmethods="15"/>
         <line num="15" count="9" type="stmt"/>
         <line num="16" count="9" type="stmt"/>
@@ -58,9 +58,9 @@
         <line num="184" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
     </package>
-    <package name="lib.constants">
+    <package name="src.constants">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9"/>
-      <file name="endpoints.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\lib\constants\endpoints.js">
+      <file name="endpoints.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\src\constants\endpoints.js">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9"/>
         <line num="1" count="3" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
@@ -74,9 +74,9 @@
         <line num="20" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="lib.stream">
+    <package name="src.stream">
       <metrics statements="50" coveredstatements="37" conditionals="21" coveredconditionals="10" methods="11" coveredmethods="9"/>
-      <file name="listener.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\lib\stream\listener.js">
+      <file name="listener.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\src\stream\listener.js">
         <metrics statements="50" coveredstatements="37" conditionals="21" coveredconditionals="10" methods="11" coveredmethods="9"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
@@ -130,10 +130,10 @@
         <line num="105" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="lib.utils">
-      <metrics statements="24" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="decrypt.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\lib\utils\decrypt.js">
-        <metrics statements="10" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+    <package name="src.utils">
+      <metrics statements="22" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="decrypt.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\src\utils\decrypt.js">
+        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
@@ -143,10 +143,9 @@
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
       </file>
-      <file name="encrypt.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\lib\utils\encrypt.js">
-        <metrics statements="14" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="encrypt.js" path="C:\Users\yiten\OneDrive\dev\OneDrive\dev\Node\Project\mildom\src\utils\encrypt.js">
+        <metrics statements="13" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -160,7 +159,6 @@
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
       </file>
     </package>
   </project>

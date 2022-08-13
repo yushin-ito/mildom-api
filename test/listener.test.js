@@ -1,4 +1,4 @@
-import ChatListener from "../lib/stream/listener.js";
+import ChatListener from "../src/stream/listener.js";
 
 const listener = new ChatListener(14222782);
 

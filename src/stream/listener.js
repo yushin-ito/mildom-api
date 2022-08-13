@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 import EventEmitter from "events";
 import WebSocket from "ws";
-import Mildom from "../mildom.js";
+import MildomAPI from "../mildom-api.js";
 import encrypt from "../utils/encrypt.js";
 import decrypt from "../utils/decrypt.js";
 
@@ -13,12 +13,12 @@ class ChatListener extends EventEmitter {
   }
 
   async startListener() {
-    const mildom = new Mildom();
+    const mildom = new MildomAPI();
     const serverInfo = await mildom.getServerInfo(this.roomId);
     if (serverInfo["wss_server"]) {
       const url = `wss://${serverInfo["wss_server"]}?roomId=${this.roomId}`;
       this.ws = this.generateWebSocket(url, this.roomId, this.guestId);
-      await this.ping();
+      this.ping();
     }
   }
 
@@ -35,22 +35,22 @@ class ChatListener extends EventEmitter {
     return this.ws ? this.ws.readyState === 1 : false;
   }
 
-  async ping() {
+  ping() {
     try {
       if (this.ws.readyState === 1) {
         this.ws.ping();
       } else if (this.ws.readyState > 1) {
         this.ws = this.ws.reopen();
-        throw Error(`Websocket closed unexpectedly for RoomId ${this.roomId}`);
+        throw new Error(`Websocket closed unexpectedly for RoomId ${this.roomId}`);
       }
       this.timer = setTimeout(() => {
         this.ping();
       }, 2500);
-    } catch (e) {
+    } catch (error) {
       if (this.ws) {
         this.ws.close();
       }
-      throw Error(`Websocket ping error to RoomId ${this.roomId}: ${e}`);
+      throw new Error(`Websocket ping error to RoomId ${this.roomId}: ${error}`);
     }
   }
 

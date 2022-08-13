@@ -16,8 +16,7 @@ const encrypt = (obj) => {
     output.set(encryption, 8);
     return output;
   } catch (e) {
-    console.error(e);
-    throw e;
+    throw new Error(e);
   }
 };
 

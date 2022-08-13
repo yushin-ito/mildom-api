@@ -1,6 +1,6 @@
-import Mildom from "../lib/mildom.js";
+import MildomAPI from "../src/mildom-api.js";
 
-const mildom = new Mildom();
+const mildom = new MildomAPI();
 
 describe("all mildom api request return expected status code", () => {
   it("streamer ranking request equal to expected status code", async () => {

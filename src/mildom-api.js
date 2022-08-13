@@ -1,7 +1,7 @@
 import https from "https";
 import endpoints from "./constants/endpoints.js";
 
-class Mildom {
+class MildomAPI {
   constructor() {}
 
   /**
@@ -47,7 +47,7 @@ class Mildom {
    * Get live information.
    *
    * @param {Number} roomId
-   * @returns {Promise<LiveInfo>}
+   * @returns {Promise<object>}
    */
   async getLiveInfo(roomId) {
     const url = new URL(endpoints.getLiveInfo(roomId));
@@ -60,7 +60,7 @@ class Mildom {
    * Get streamer rank.
    *
    * @param {string} type ["hour", "day", "week", "month"]
-   * @returns
+   * @returns {Promise<object>}
    */
   async getStreamerRanking(type) {
     const types = ["hour", "day", "week", "month"];
@@ -76,7 +76,7 @@ class Mildom {
    * Get follower rank.
    *
    * @param {string} type ["hour", "day", "week", "month"]
-   * @returns
+   * @returns {Promise<object>}
    */
   async getFollowerRanking(type) {
     const types = ["hour", "day", "week", "month"];
@@ -92,7 +92,7 @@ class Mildom {
    * Get user profile.
    *
    * @param {string} userId
-   * @returns
+   * @returns {Promise<object>}
    */
   async getUserProfile(userId) {
     const url = new URL(endpoints.getUserProfile(userId));
@@ -105,7 +105,7 @@ class Mildom {
    * Get server information.
    *
    * @param {Number} roomId
-   * @returns
+   * @returns {Promise<object>}
    */
   async getServerInfo(roomId) {
     const url = new URL(endpoints.getServerInfo(roomId));
@@ -120,7 +120,7 @@ class Mildom {
    * @param {Number} userId
    * @param {Number} page
    * @param {Number} limit
-   * @returns
+   * @returns {Promise<object>}
    */
   async getPlaybackList(userId, page = 1, limit = 10) {
     const url = new URL(endpoints.getPlaybackList(userId, page, limit));
@@ -133,7 +133,7 @@ class Mildom {
    * Get playback information.
    *
    * @param {Number} userId
-   * @returns
+   * @returns {Promise<object>}
    */
   async getPlaybackInfo(videoId) {
     const url = new URL(endpoints.getPlaybackInfo(videoId));
@@ -162,7 +162,7 @@ class Mildom {
    * @param {string} category ["user", "live", "video", "playback", "recommend", "clip", "all"]
    * @param {Number} page
    * @param {Number} limit
-   * @returns
+   * @returns {Promise<object>}
    */
   async search(query, category = "all", page = 1, limit = 10) {
     const categories = [
@@ -185,4 +185,4 @@ class Mildom {
   }
 }
 
-export default Mildom;
+export default MildomAPI;

@@ -1,4 +1,4 @@
-import Mildom from "./lib/mildom.js"
-import ChatListener from "./lib/stream/listener.js"
+import MildomAPI from "./src/mildom-api.js";
+import ChatListener from "./src/stream/listener.js";
 
-export { Mildom, ChatListener };
+export { MildomAPI, ChatListener };

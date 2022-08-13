@@ -11,8 +11,7 @@ const decrypt = (buf) => {
     const obj = JSON.parse(str);
     return obj;
   } catch (e) {
-    console.error(e);
-    throw e;
+    throw new Error(e);
   }
 };
 

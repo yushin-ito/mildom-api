@@ -1,4 +1,4 @@
-import endpoints from "../lib/constants/endpoints.js";
+import endpoints from "../src/constants/endpoints.js";
 
 describe("all endpoints methods return url containing required param", () => {
   it("streamer rank request url contains required param", () => {
