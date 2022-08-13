@@ -6,7 +6,9 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "test:coverage": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --coverage",
+    "test:badges": "npm run test:coverage && jest-coverage-badges"
   },
   "author": "Yushin Ito",
   "license": "MIT",
@@ -26,6 +28,7 @@
   "dependencies": {
     "eslint-plugin-jest": "^26.8.2",
     "https": "^1.0.0",
+    "jest-coverage-badges": "^1.1.2",
     "mildom-api": "^1.0.2",
     "uuid": "^8.3.2",
     "ws": "^8.8.1",
