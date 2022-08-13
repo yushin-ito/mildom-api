@@ -1,6 +1,6 @@
 # Basics
 
-> \*For convenience, all code examples in this document are presented in ESModules. When using CommonJS, `import` may need to be replaced with `require()` calls.,
+> \*For convenience, all code examples in this document are presented in ESModules. When using CommonJS, `import` may need to be replaced with `require()` calls.
 - [Basics](#basics)
   - [Client basics](#client-basics)
     - [Create a client](#create-a-client)
