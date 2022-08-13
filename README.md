@@ -8,7 +8,7 @@
 ![Coverage:statements](coverage/badge-statements.svg)
 ![Licence](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=43200)
 
-Simple Wrapper Module for making API calls to https://fortniteapi.io.
+Simple Wrapper Module for making API calls to https://www.mildom.com.
 
 You can also read the [module docs](https://github.com/yushin-ito/mildom/wiki) for a list of supported calls.
 
