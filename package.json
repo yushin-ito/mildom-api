@@ -1,6 +1,6 @@
 {
   "name": "mildom-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple Wrapper Module for making API calls to mildom",
   "main": "index.js",
   "type": "module",
@@ -29,14 +29,11 @@
     "eslint-plugin-jest": "^26.8.2",
     "https": "^1.0.0",
     "jest-coverage-badges": "^1.0.0",
-    "mildom-api": "^1.0.2",
     "uuid": "^8.3.2",
     "ws": "^8.8.1",
     "xxtea-node": "^1.1.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "@babel/preset-env": "^7.18.10",
     "cross-env": "^7.0.3",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
