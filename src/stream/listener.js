@@ -41,7 +41,9 @@ class ChatListener extends EventEmitter {
         this.ws.ping();
       } else if (this.ws.readyState > 1) {
         this.ws = this.ws.reopen();
-        throw new Error(`Websocket closed unexpectedly for RoomId ${this.roomId}`);
+        throw new Error(
+          `Websocket closed unexpectedly for RoomId ${this.roomId}`
+        );
       }
       this.timer = setTimeout(() => {
         this.ping();
@@ -50,7 +52,9 @@ class ChatListener extends EventEmitter {
       if (this.ws) {
         this.ws.close();
       }
-      throw new Error(`Websocket ping error to RoomId ${this.roomId}: ${error}`);
+      throw new Error(
+        `Websocket ping error to RoomId ${this.roomId}: ${error}`
+      );
     }
   }
 
@@ -68,7 +72,7 @@ class ChatListener extends EventEmitter {
         cmd: "enterRoom",
       });
       ws.send(data);
-      this.emit("onOpen");
+      this.emit("open");
     });
 
     ws.on("error", async (error) => {
@@ -99,7 +103,7 @@ class ChatListener extends EventEmitter {
     });
 
     ws.on("close", async () => {
-      this.emit("onClose");
+      this.emit("close");
     });
 
     return ws;

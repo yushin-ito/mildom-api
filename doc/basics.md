@@ -1,6 +1,7 @@
 # Basics
 
 > \*For convenience, all code examples in this document are presented in ESModules. When using CommonJS, `import` may need to be replaced with `require()` calls.
+
 - [Basics](#basics)
   - [Client basics](#client-basics)
     - [Create a client](#create-a-client)
@@ -15,6 +16,7 @@
     - [mildom.getPlaybackInfo(videoId) => Promise](#mildomgetplaybackinfovideoid--promise)
     - [mildom.isLive(userId) => Boolean](#mildomisliveuserid--boolean)
     - [mildom.serch(query, [category], [page], [limit]) => Promise](#mildomserchquery-category-page-limit--promise)
+
 ## Client basics
 
 ### Create a client
@@ -38,75 +40,85 @@ Your client is now ready.
 Call the API using the created client.
 
 ### mildom.getRequest(url) => Promise
+
 Send GET request.
 Kind: instance method of `MildomAPI`
-| Param |  Type  |
+| Param | Type |
 | :---: | :----: |
-|  url  |   URL  |
+| url | URL |
 
 ### mildom.getLiveInfo(roomId) => Promise
-Get live informations.
+
+Get live informations about the given roomId.
 Kind: instance method of `MildomAPI`
-| Param  |  Type  |
-| :---:  | :----: |
+| Param | Type |
+| :---: | :----: |
 | roomId | Number |
 
 ### mildom.getStreamerRanking(type) => Promise
-Get streamer ranking.
+
+Get streamer ranking about the given type.
 Kind: instance method of `MildomAPI`
-| Param |  Type  |      Description       |
+| Param | Type | Description |
 | :---: | :----: | :--------------------: |
-| type  | string | hour, day, week, month |
+| type | string | hour, day, week, month |
 
 ### mildom.getFollowerRanking(type) => Promise
-Get follower ranking.
+
+Get follower ranking about the given type.
 Kind: instance method of `MildomAPI`
-| Param |  Type  |      Description       |
+| Param | Type | Description |
 | :---: | :----: | :--------------------: |
-| type  | string | hour, day, week, month |
+| type | string | hour, day, week, month |
 
 ### mildom.getUserProfile(userId) => Promise
-Get an user profile.
+
+Get an user profile about the given userId.
 Kind: instance method of `MildomAPI`
-| Param  |  Type  |
-| :---:  | :----: |
+| Param | Type |
+| :---: | :----: |
 | userId | Number |
 
 ### mildom.getServerInfo(roomId) => Promise
-Get server infomations.
+
+Get server infomations about the given roomId.
 Kind: instance method of `MildomAPI`
-| Param  |  Type  |
-| :---:  | :----: |
+| Param | Type |
+| :---: | :----: |
 | roomId | Number |
 
 ### mildom.getPlaybackList(userId, [page], [lismit]) => Promise
-Get a playback list.
+
+Get a playback list about the given userId.
 Kind: instance method of `MildomAPI`
-|  Param  |  Type  |  Default  |
-|  :---:  | :----: | :--------:|
-| userId  | Number |     
-| [page]  | Number |     1     |
-| [limit] | Number |     10    |
+| Param | Type | Default |
+| :---: | :----: | :--------:|
+| userId | Number |  
+| [page] | Number | 1 |
+| [limit] | Number | 10 |
 
 ### mildom.getPlaybackInfo(videoId) => Promise
-Get playback informations
+
+Get playback informations about the given videoId.
 Kind: instance method of `MildomAPI`
-|  Param  |  Type  |
-|  :---:  | :----: |
+| Param | Type |
+| :---: | :----: |
 | videoId | Number |
 
 ### mildom.isLive(userId) => Boolean
-Get stream live status.
+
+Get stream live status about the given userId.
 Kind: instance method of `MildomAPI`
-|  Param  |  Type  |
-|  :---:  | :----: |
-|  userId | Number |
+| Param | Type |
+| :---: | :----: |
+| userId | Number |
 
 ### mildom.serch(query, [category], [page], [limit]) => Promise
-Search category.
-| Param |  Type  | Default |     Description       |
+
+Search "query" about the given category.
+| Param | Type | Default | Description |
 | :---: | :----: | :-----: |:--------------------: |
-| query | string |         | string you want to search |
-| type  | string |         | ["user", "live", "video", "playback", "recommend", "clip", "all"] |
-|[page] | Number |    1    |
-|[limit]| Number |    10   |
+| query | string | | string you want to search |
+| type | string | | ["user", "live", "video", "playback", "recommend", "clip", "all"] |
+|[page] | Number | 1 |
+|[limit]| Number | 10 |

@@ -44,7 +44,7 @@ class MildomAPI {
 
   /**
    * getLiveInfo()
-   * Get live informations.
+   * Get live informations about the given roomId.
    *
    * @param {Number} roomId
    * @returns {Promise<object>}
@@ -57,7 +57,7 @@ class MildomAPI {
 
   /**
    * getStreamerRanking()
-   * Get streamer ranking.
+   * Get streamer ranking about the given type.
    *
    * @param {string} type ["hour", "day", "week", "month"]
    * @returns {Promise<object>}
@@ -73,7 +73,7 @@ class MildomAPI {
 
   /**
    * getFollowerRanking()
-   * Get follower ranking.
+   * Get follower ranking about the given type.
    *
    * @param {string} type ["hour", "day", "week", "month"]
    * @returns {Promise<object>}
@@ -89,7 +89,7 @@ class MildomAPI {
 
   /**
    * getUserProfile()
-   * Get user profile.
+   * Get user profile about the given userId.
    *
    * @param {string} userId
    * @returns {Promise<object>}
@@ -102,7 +102,7 @@ class MildomAPI {
 
   /**
    * getServerInfo()
-   * Get server informations.
+   * Get server informations about the given rooomId.
    *
    * @param {Number} roomId
    * @returns {Promise<object>}
@@ -115,7 +115,7 @@ class MildomAPI {
 
   /**
    * getPlaybackList()
-   * Get playback list.
+   * Get playback list about the given userId.
    *
    * @param {Number} userId
    * @param {Number} page
@@ -130,9 +130,9 @@ class MildomAPI {
 
   /**
    * getPlaybackInfo()
-   * Get playback information.
+   * Get playback informations about the given videoId .
    *
-   * @param {Number} userId
+   * @param {Number} videoId
    * @returns {Promise<object>}
    */
   async getPlaybackInfo(videoId) {
@@ -143,7 +143,7 @@ class MildomAPI {
 
   /**
    * isLive()
-   * Get stream live status.
+   * Get stream live status about the given userId.
    * members-only live stream is not supported.
    *
    * @param {Number} userId
@@ -156,7 +156,7 @@ class MildomAPI {
 
   /**
    * search()
-   * Search category.
+   * Search "query" about the given category.
    *
    * @param {string} query
    * @param {string} category ["user", "live", "video", "playback", "recommend", "clip", "all"]
