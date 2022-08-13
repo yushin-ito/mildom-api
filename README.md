@@ -10,7 +10,7 @@
 
 Simple Wrapper Module for making API calls to [mildom](https://www.mildom.com).
 
-You can also read the [module docs](https://github.com/yushin-ito/mildom/wiki) for a list of supported calls.
+You can also read the [module docs](doc) for a list of supported calls.
 
 ## Install the Module
 
