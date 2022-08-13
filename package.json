@@ -6,7 +6,7 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest"
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "author": "Yushin Ito",
   "license": "MIT",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
+    "cross-env": "^7.0.3",
     "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "jest": "^28.1.3",
