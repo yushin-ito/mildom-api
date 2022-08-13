@@ -1,7 +1,20 @@
 # Basics
 
 > \*For convenience, all code examples in this document are presented in ESModules. When using CommonJS, `import` may need to be replaced with `require()` calls.,
-
+- [Basics](#basics)
+  - [Client basics](#client-basics)
+    - [Create a client](#create-a-client)
+  - [API Calls Basic](#api-calls-basic)
+    - [mildom.getRequest(url) => Promise](#mildomgetrequesturl--promise)
+    - [mildom.getLiveInfo(roomId) => Promise](#mildomgetliveinforoomid--promise)
+    - [mildom.getStreamerRanking(type) => Promise](#mildomgetstreamerrankingtype--promise)
+    - [mildom.getFollowerRanking(type) => Promise](#mildomgetfollowerrankingtype--promise)
+    - [mildom.getUserProfile(userId) => Promise](#mildomgetuserprofileuserid--promise)
+    - [mildom.getServerInfo(roomId) => Promise](#mildomgetserverinforoomid--promise)
+    - [mildom.getPlaybackList(userId, [page], [lismit]) => Promise](#mildomgetplaybacklistuserid-page-lismit--promise)
+    - [mildom.getPlaybackInfo(videoId) => Promise](#mildomgetplaybackinfovideoid--promise)
+    - [mildom.isLive(userId) => Boolean](#mildomisliveuserid--boolean)
+    - [mildom.serch(query, [category], [page], [limit]) => Promise](#mildomserchquery-category-page-limit--promise)
 ## Client basics
 
 ### Create a client

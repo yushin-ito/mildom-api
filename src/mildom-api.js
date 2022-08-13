@@ -6,7 +6,7 @@ class MildomAPI {
 
   /**
    * getRequest()
-   * Get base request.
+   * Send GET request.
    *
    * @param {string} url
    * @returns {Promise<object>}
@@ -44,7 +44,7 @@ class MildomAPI {
 
   /**
    * getLiveInfo()
-   * Get live information.
+   * Get live informations.
    *
    * @param {Number} roomId
    * @returns {Promise<object>}
@@ -57,7 +57,7 @@ class MildomAPI {
 
   /**
    * getStreamerRanking()
-   * Get streamer rank.
+   * Get streamer ranking.
    *
    * @param {string} type ["hour", "day", "week", "month"]
    * @returns {Promise<object>}
@@ -73,7 +73,7 @@ class MildomAPI {
 
   /**
    * getFollowerRanking()
-   * Get follower rank.
+   * Get follower ranking.
    *
    * @param {string} type ["hour", "day", "week", "month"]
    * @returns {Promise<object>}
@@ -102,7 +102,7 @@ class MildomAPI {
 
   /**
    * getServerInfo()
-   * Get server information.
+   * Get server informations.
    *
    * @param {Number} roomId
    * @returns {Promise<object>}
