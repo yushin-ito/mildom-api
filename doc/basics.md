@@ -25,21 +25,20 @@ Your client is now ready.
 Call the API using the created client.
 
 ### mildom.getRequest(url) => Promise
-
 Send GET request.
 Kind: instance method of `MildomAPI`
 | Param |  Type  |
 | :---: | :----: |
 |  url  |   URL  |
-### mildom.getLiveInfo(roomId) => Promise
 
-Get live information.
+### mildom.getLiveInfo(roomId) => Promise
+Get live informations.
 Kind: instance method of `MildomAPI`
 | Param  |  Type  |
 | :---:  | :----: |
-| roomId | string |
-### mildom.getStreamerRanking(type) => Promise
+| roomId | Number |
 
+### mildom.getStreamerRanking(type) => Promise
 Get streamer ranking.
 Kind: instance method of `MildomAPI`
 | Param |  Type  |      Description       |
@@ -47,11 +46,54 @@ Kind: instance method of `MildomAPI`
 | type  | string | hour, day, week, month |
 
 ### mildom.getFollowerRanking(type) => Promise
-
 Get follower ranking.
 Kind: instance method of `MildomAPI`
 | Param |  Type  |      Description       |
 | :---: | :----: | :--------------------: |
 | type  | string | hour, day, week, month |
 
-### Get an user profile by user ID
+### mildom.getUserProfile(userId) => Promise
+Get an user profile.
+Kind: instance method of `MildomAPI`
+| Param  |  Type  |
+| :---:  | :----: |
+| userId | Number |
+
+### mildom.getServerInfo(roomId) => Promise
+Get server infomations.
+Kind: instance method of `MildomAPI`
+| Param  |  Type  |
+| :---:  | :----: |
+| roomId | Number |
+
+### mildom.getPlaybackList(userId, [page], [lismit]) => Promise
+Get a playback list.
+Kind: instance method of `MildomAPI`
+|  Param  |  Type  |  Default  |
+|  :---:  | :----: | :--------:|
+| userId  | Number |     
+| [page]  | Number |     1     |
+| [limit] | Number |     10    |
+
+### mildom.getPlaybackInfo(videoId) => Promise
+Get playback informations
+Kind: instance method of `MildomAPI`
+|  Param  |  Type  |
+|  :---:  | :----: |
+| videoId | Number |
+
+### mildom.isLive(userId) => Boolean
+Get stream live status.
+Kind: instance method of `MildomAPI`
+|  Param  |  Type  |
+|  :---:  | :----: |
+|  userId | Number |
+
+### mildom.serch(query, [category], [page], [limit]) => Promise
+Search category.
+| Param |  Type  | Default |     Description       |
+| :---: | :----: | :-----: |:--------------------: |
+| query | string |         | string you want to search |
+| type  | string |         | ["user", "live", "video", "playback", "recommend", "clip", "all"] |
+|[page] | Number |    1    |
+|[limit]| Number |    10   |
