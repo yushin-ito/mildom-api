@@ -24,13 +24,34 @@ Your client is now ready.
 
 Call the API using the created client.
 
-### mildom.getStreamerRanking(type) => Promise<object>
+### mildom.getRequest(url) => Promise
 
-Get streamer ranking
-
+Send GET request.
 Kind: instance method of `MildomAPI`
-| Param | Type | Description |
+| Param |  Type  |
+| :---: | :----: |
+|  url  |   URL  |
+### mildom.getLiveInfo(roomId) => Promise
+
+Get live information.
+Kind: instance method of `MildomAPI`
+| Param  |  Type  |
+| :---:  | :----: |
+| roomId | string |
+### mildom.getStreamerRanking(type) => Promise
+
+Get streamer ranking.
+Kind: instance method of `MildomAPI`
+| Param |  Type  |      Description       |
 | :---: | :----: | :--------------------: |
-| type | string | hour, day, week, month |
+| type  | string | hour, day, week, month |
+
+### mildom.getFollowerRanking(type) => Promise
+
+Get follower ranking.
+Kind: instance method of `MildomAPI`
+| Param |  Type  |      Description       |
+| :---: | :----: | :--------------------: |
+| type  | string | hour, day, week, month |
 
 ### Get an user profile by user ID
