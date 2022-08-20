@@ -1,6 +1,6 @@
 {
   "name": "mildom-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple Wrapper Module for making API calls to mildom",
   "main": "index.js",
   "type": "module",

@@ -92,6 +92,9 @@ class ChatListener extends EventEmitter {
           case "onAdd":
             this.emit("onAdd");
             break;
+          case "onUserCount":
+            this.emit("onUserCount", message);
+            break;
           case "onLiveStart":
             this.emit("onLiveStart");
             break;

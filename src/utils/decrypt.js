@@ -7,11 +7,12 @@ const decrypt = (buf) => {
   const buffer = Buffer.from(buf);
   try {
     const slice = buffer.slice(8);
-    const str = xxtea.toString(xxtea.decrypt(slice, xxtea.toBytes(key)));
+    const data = xxtea.decrypt(slice, xxtea.toBytes(key));
+    const str = xxtea.toString(data);
     const obj = JSON.parse(str);
     return obj;
-  } catch (e) {
-    throw new Error(e);
+  } catch (error) {
+    throw new Error(error);
   }
 };
 

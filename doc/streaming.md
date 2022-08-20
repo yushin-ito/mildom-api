@@ -10,6 +10,7 @@
     - [Event: 'onEnterRoom'](#event-onenterroom)
     - [Event: 'onAdd'](#event-onadd)
     - [Event: 'onChat'](#event-onchat)
+    - [Event: 'onUserCount'](#event-onusercount)
     - [Event: 'onLiveStart'](#event-onlivestart)
     - [Event: 'onLiveEnd'](#event-onliveend)
     - [listener.startListener()](#listenerstartlistener)
@@ -54,10 +55,43 @@ Emitted when user enter the room after the first time.
 
 Emitted when a chat is received.
 
-- chat: {object}
+- message: {object}
 
 ```js
+{
+  area: 2000,
+  cmd: 'onChat',
+  fansBgPic: null,
+  fansGroupType: 0,
+  fansLevel: null,
+  fansName: null,
+  gareaReturnObj: { badges: null, fans_group_type: 10, user_pendant: null },
+  isFirstTopup: 0,
+  level: 100,
+  medals: null,
+  msg: 'hello world',
+  msgId: '1000000000000_1000000_1000',
+  reqId: 0,
+  roomAdmin: 1,
+  roomId: 1000000,
+  time: '1000000000000',
+  toId: 1000000,
+  toName: 'hoge',
+  type: 3,
+  userId: 10000001,
+  userImg: 'https://isscdn.mildom.tv/download/file/jp/mildom/nnphotos/10000001/foo.png',
+  userName: 'fuga'
+}
+```
 
+### Event: 'onUserCount'
+
+Emitted when a received user count
+
+- message: {object}
+
+```js
+{ cmd: 'onUserCount', roomId: 100000, type: 3, userCount: 10 }
 ```
 
 ### Event: 'onLiveStart'

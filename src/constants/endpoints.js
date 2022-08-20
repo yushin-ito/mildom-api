@@ -15,6 +15,10 @@ export default {
     `${endpoint}/videocontent/playback/getPlaybackDetail?__platform=web&v_id=${videoId}`,
   getPlaybackChat: (videoId, timeOffset) =>
     `${endpoint}/videocontent/chat/replay?video_id=${videoId}&time_offset_ms=${timeOffset}&drag_flag=1`,
+  getEventTagList: () =>
+    `https://cloudac-cf-jp.mildom.com/nonolive/gappserv/top_banner/tag_list`,
+  getEventList: (userId, tag, type, page, limit) =>
+    `https://cloudac-cf-jp.mildom.com/nonolive/gappserv/top_banner/list?__platform=web&__user_id=${userId}&page=${page}&limit=${limit}&tag=${tag}&hold_state=${type}`,
   getServerInfo: (roomId) => `https://im.mildom.com/?room_id=${roomId}`,
   search: (query, type, page, limit) =>
     `https://cloudac-cf-jp.mildom.com/nonolive/gsearch/search?query=${query}&type=${type}&page=${page}&limit=${limit}`,

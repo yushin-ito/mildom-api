@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74% </span>
+                <span class="strong">71.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>37/50</span>
+                <span class='fraction'>37/52</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.61% </span>
+                <span class="strong">45.45% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/21</span>
+                <span class='fraction'>10/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74% </span>
+                <span class="strong">71.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>37/50</span>
+                <span class='fraction'>37/52</span>
             </div>
         
             
@@ -171,7 +171,14 @@
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,6 +223,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,6 +237,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -261,6 +272,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -322,7 +336,9 @@ class ChatListener extends EventEmitter {
         this.ws.ping();
       } else <span class="missing-if-branch" title="if path not taken" >I</span>if (this.ws.readyState &gt; 1) {
 <span class="cstat-no" title="statement not covered" >        this.ws = this.ws.reopen();</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Websocket closed unexpectedly for RoomId ${this.roomId}`);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(</span>
+          `Websocket closed unexpectedly for RoomId ${this.roomId}`
+        );
       }
       this.timer = setTimeout(() =&gt; {
         this.ping();
@@ -331,7 +347,9 @@ class ChatListener extends EventEmitter {
 <span class="cstat-no" title="statement not covered" >      if (this.ws) {</span>
 <span class="cstat-no" title="statement not covered" >        this.ws.close();</span>
       }
-<span class="cstat-no" title="statement not covered" >      throw new Error(`Websocket ping error to RoomId ${this.roomId}: ${error}`);</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error(</span>
+        `Websocket ping error to RoomId ${this.roomId}: ${error}`
+      );
     }
   }
 &nbsp;
@@ -349,7 +367,7 @@ class ChatListener extends EventEmitter {
         cmd: "enterRoom",
       });
       ws.send(data);
-      this.emit("onOpen");
+      this.emit("open");
     });
 &nbsp;
     ws.on("error", <span class="fstat-no" title="function not covered" >as</span>ync (error) =&gt; {
@@ -369,10 +387,13 @@ class ChatListener extends EventEmitter {
           case "onAdd":
             this.emit("onAdd");
             break;
-<span class="branch-3 cbranch-no" title="branch not covered" >          case "onLiveStart":</span>
+<span class="branch-3 cbranch-no" title="branch not covered" >          case "onUserCount":</span>
+<span class="cstat-no" title="statement not covered" >            this.emit("onUserCount", message);</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+<span class="branch-4 cbranch-no" title="branch not covered" >          case "onLiveStart":</span>
 <span class="cstat-no" title="statement not covered" >            this.emit("onLiveStart");</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
-<span class="branch-4 cbranch-no" title="branch not covered" >          case "onLiveEnd":</span>
+<span class="branch-5 cbranch-no" title="branch not covered" >          case "onLiveEnd":</span>
 <span class="cstat-no" title="statement not covered" >            this.emit("onLiveEnd");</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
         }
@@ -380,7 +401,7 @@ class ChatListener extends EventEmitter {
     });
 &nbsp;
     ws.on("close", <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
-<span class="cstat-no" title="statement not covered" >      this.emit("onClose");</span>
+<span class="cstat-no" title="statement not covered" >      this.emit("close");</span>
     });
 &nbsp;
     return ws;
@@ -394,7 +415,7 @@ export default ChatListener;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-13T07:15:37.653Z
+                at 2022-08-20T15:21:06.369Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

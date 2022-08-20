@@ -34,6 +34,19 @@ describe("all mildom api request return expected status code", () => {
     expect(playbackInfo.code).toEqual(0);
   });
 
+  it("playback chat request equal to expected status code", async () => {
+    const playbackChat = await mildom.getPlaybackChat(
+      "10687920-bvk49ochl3vrgho93neg",
+      3000000
+    );
+    expect(playbackChat.code).toEqual(0);
+  });
+
+  it("event list request equal to expected status code", async () => {
+    const eventList = await mildom.getEventList(100000, "全て", "holding");
+    expect(eventList.code).toEqual(0);
+  });
+
   it("server info request equal to expected status code", async () => {
     const serverInfo = await mildom.getServerInfo(100000);
     expect(serverInfo).toEqual(expect.anything());
@@ -52,6 +65,13 @@ describe("method throws with invalid argument", () => {
 
   it("get follower ranking throws with invalid type", async () => {
     await expect(mildom.getFollowerRanking("fuga")).rejects.toThrow();
+  });
+
+  it("get event list throws with invalid arguments", async () => {
+    await expect(
+      mildom.getEventList(100000, "foo", "holding")
+    ).rejects.toThrow();
+    await expect(mildom.getEventList(100000, "全て", "bar")).rejects.toThrow();
   });
 
   it("serch throws with invalid type", async () => {

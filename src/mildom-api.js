@@ -62,7 +62,7 @@ class MildomAPI {
    * @param {string} type ["hour", "day", "week", "month"]
    * @returns {Promise<object>}
    */
-  async getStreamerRanking(type) {
+  async getStreamerRanking(type = "day") {
     const types = ["hour", "day", "week", "month"];
     if (!types.includes(type))
       throw new Error(`"type" argument must be one of these: [${types}]`);
@@ -78,7 +78,7 @@ class MildomAPI {
    * @param {string} type ["hour", "day", "week", "month"]
    * @returns {Promise<object>}
    */
-  async getFollowerRanking(type) {
+  async getFollowerRanking(type = "day") {
     const types = ["hour", "day", "week", "month"];
     if (!types.includes(type))
       throw new Error(`"type" argument must be one of these: [${types}]`);
@@ -142,6 +142,61 @@ class MildomAPI {
   }
 
   /**
+   * getPlaybackChat()
+   * Get playback chat about the given videoId .
+   *
+   * @param {Number} videoId
+   * @param {Number} timeOffset
+   * @returns {Promise<object>}
+   */
+  async getPlaybackChat(videoId, timeOffset) {
+    const url = new URL(endpoints.getPlaybackChat(videoId, timeOffset));
+    const chat = await this.getRequest(url);
+    return chat ? chat : {};
+  }
+
+  /**
+   * getEventTagList()
+   * Get event tag list.
+   *
+   * @returns {Promise<object>}
+   */
+  async getEventTagList() {
+    const url = new URL(endpoints.getEventTagList());
+    const result = await this.getRequest(url);
+    return result && result.body ? result.body.tag_list : {};
+  }
+
+  /**
+   * getEventList()
+   * Get event list.
+   * @param {Number} userId
+   * @param {string} tag
+   * @param {string} state ["all", "scheduled", "holding", "finished"]
+   * @param {Number} page
+   * @param {Number} limit
+   * @returns {Promise<object>}
+   */
+  async getEventList(userId, tag, state, page = 1, limit = 50) {
+    const tags = await this.getEventTagList();
+    const states = ["all", "scheduled", "holding", "finished"];
+    const type = states.indexOf(state);
+    tags.push("全て");
+    if (!tags.includes(tag)) {
+      throw new Error(`"tag" argument must be one of these: [${tags}]`);
+    }
+    if (tag === "全て") {
+      tag = "";
+    }
+    if (!(type + 1)) {
+      throw new Error(`"type" argument must be one of these: [${states}]`);
+    }
+    const url = new URL(endpoints.getEventList(userId, tag, type, page, limit));
+    const event = await this.getRequest(url);
+    return event ? event : {};
+  }
+
+  /**
    * isLive()
    * Get stream live status about the given userId.
    * members-only live stream is not supported.
@@ -151,7 +206,7 @@ class MildomAPI {
    */
   async isLive(userId) {
     const profile = await this.getUserProfile(userId);
-    return profile ? Boolean(profile.user_info.anchor_live == 11) : {};
+    return Boolean(profile.user_info.anchor_live == 11);
   }
 
   /**

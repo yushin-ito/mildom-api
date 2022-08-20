@@ -15,8 +15,8 @@ const encrypt = (obj) => {
     output.set(bufAsUint, 4);
     output.set(encryption, 8);
     return output;
-  } catch (e) {
-    throw new Error(e);
+  } catch (error) {
+    throw new Error(error);
   }
 };
 

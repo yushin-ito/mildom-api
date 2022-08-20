@@ -14,6 +14,8 @@
     - [mildom.getServerInfo(roomId) => Promise](#mildomgetserverinforoomid--promise)
     - [mildom.getPlaybackList(userId, [page], [lismit]) => Promise](#mildomgetplaybacklistuserid-page-lismit--promise)
     - [mildom.getPlaybackInfo(videoId) => Promise](#mildomgetplaybackinfovideoid--promise)
+    - [mildom.getPlaybackChat(videoId, timeOffset) => Promise](#mildomgetplaybackchatvideoid-timeoffset--promise)
+    - [mildom.getEventList(userId, tag, state, [page], [limit]) => Promise](#mildomgeteventlistuserid-tag-state-page-limit--promise)
     - [mildom.isLive(userId) => Boolean](#mildomisliveuserid--boolean)
     - [mildom.serch(query, [category], [page], [limit]) => Promise](#mildomserchquery-category-page-limit--promise)
 
@@ -104,6 +106,27 @@ Kind: instance method of `MildomAPI`
 | Param | Type |
 | :---: | :----: |
 | videoId | Number |
+
+### mildom.getPlaybackChat(videoId, timeOffset) => Promise
+
+Get playback chat about the given videoId.
+Kind: instance method of `MildomAPI`
+| Param | Type |
+| :---: | :----: |
+| videoId | Number |
+| timeOffset | Number |
+
+### mildom.getEventList(userId, tag, state, [page], [limit]) => Promise
+
+Get event list.
+Kind: instance method of `MildomAPI`
+| Param | Type | Default | Description |
+| :---: | :----: | :-----: |:--------------------: |
+| userId | Number | |
+| tag | string | |
+| state | string | | ["all", "scheduled", "holding", "finished"] |
+|[page] | Number | 1 |
+|[limit]| Number | 50 |
 
 ### mildom.isLive(userId) => Boolean
 
